@@ -15,6 +15,11 @@ repositories {
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+	testImplementation project.ext.springstarterweb
+	testImplementation project.ext.mockitocore
+	testImplementation project.ext.junitjupiterapi
+	testRuntimeOnly project.ext.junitjupiterengine
 }
 
 tasks.named('test') {

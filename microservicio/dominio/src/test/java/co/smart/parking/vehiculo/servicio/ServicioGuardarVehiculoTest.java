@@ -39,8 +39,8 @@ public class ServicioGuardarVehiculoTest {
     @Test
     public void deberiaFallarAlValidarLaExistenciaDelVehiculo() {
 
-        /* Arrange
-        var vehiculo = new Vehiculo("111", usuario);
+        // Arrange
+        var vehiculo = new Vehiculo("111");
         var repositorioVehiculo = Mockito.mock(RepositorioVehiculo.class);
         var daoVehiculo = Mockito.mock(DaoVehiculo.class);
 
@@ -55,6 +55,6 @@ public class ServicioGuardarVehiculoTest {
         } catch (Exception e) {
             assertTrue(e instanceof ExcepcionDuplicidad, "Se esperaba otra excepción");
             assertTrue(e.getMessage().contains("No se pudo guardar"), "Se esperaba otro mensaje");
-        }*/
+        }
     }
 }

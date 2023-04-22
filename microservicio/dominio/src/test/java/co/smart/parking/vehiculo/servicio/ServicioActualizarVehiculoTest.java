@@ -34,8 +34,8 @@ public class ServicioActualizarVehiculoTest {
     @Test
     public void deberiaFallarAlValidarLaExistenciaDelVehiculo() {
 
-        /* Arrange
-        var vehiculo = new Vehiculo("111", usuario);
+        // Arrange
+        var vehiculo = new Vehiculo("111");
         var repositorioVehiculo = Mockito.mock(RepositorioVehiculo.class);
 
         var servicioActualizarVehiculo = new ServicioActualizarVehiculo(repositorioVehiculo);
@@ -49,6 +49,6 @@ public class ServicioActualizarVehiculoTest {
         } catch (Exception e) {
             assertTrue(e instanceof ExcepcionInexistente, "Se esperaba otra excepción");
             assertTrue(e.getMessage().contains("No se puede actualizar ya que el vehiculo no existe"), "Se esperaba otro mensaje");
-        }*/
+        }
     }
 }
