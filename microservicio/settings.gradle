@@ -1,4 +1,4 @@
-rootProject.name = 'parking'
+rootProject.name = 'Talento UCO'
 
 include ':aplicacion'
 include ':dominio'

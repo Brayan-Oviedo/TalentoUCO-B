@@ -25,7 +25,7 @@ allprojects {
 	project.ext.db = [ 'org.postgresql:postgresql:42.3.3'  ] // :42.3.3
 
 	//Database 'mysql:mysql-connector-java'
-	//project.ext.db = [ 'mysql:mysql-connector-java'  ]
+	project.ext.db = [ 'mysql:mysql-connector-java'  ]
 
 	//Lombok
 	project.ext.lombok = [ 'org.projectlombok:lombok:1.18.20' ]
@@ -54,7 +54,7 @@ allprojects {
 
 }
 
-group = 'co.smart.parking'
+group = 'co.talento.uco'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '17'
 
@@ -75,7 +75,7 @@ dependencies {
 springBoot {
 	buildInfo {
 		properties{
-			name="parking"
+			name="talento"
 			version= version
 		}
 	}

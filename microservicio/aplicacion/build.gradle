@@ -3,7 +3,7 @@ plugins {
 	id 'java'
 }
 
-group = 'co.smart.parking'
+group = 'co.talento.uco'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '17'
 
