@@ -2,7 +2,6 @@ package co.talento.uco.auth.controlador;
 
 import co.talento.uco.auth.adaptador.Auth;
 import co.talento.uco.jwToken.modelo.dto.RespuestaJwToken;
-import co.talento.uco.rabbitmq.adaptador.EscritorMensaje;
 import co.talento.uco.usuario.comando.RequestUsuarioTransaccion;
 import co.talento.uco.usuario.comando.fabrica.FabricaUsuario;
 import co.talento.uco.usuario.comando.manejador.ManejadorGuardarUsuario;
@@ -17,14 +16,13 @@ public class ControladorAuthTransaccion {
     private final FabricaUsuario fabricaUsuario;
     private final ManejadorGuardarUsuario manejadorGuardarUsuario;
 
-    private final EscritorMensaje escritorMensaje;
 
     @Autowired
-    public ControladorAuthTransaccion(Auth auth, FabricaUsuario fabricaUsuario, ManejadorGuardarUsuario manejadorGuardarUsuario, EscritorMensaje escritorMensaje) {
+    public ControladorAuthTransaccion(Auth auth, FabricaUsuario fabricaUsuario, ManejadorGuardarUsuario manejadorGuardarUsuario) {
         this.auth = auth;
         this.fabricaUsuario = fabricaUsuario;
         this.manejadorGuardarUsuario = manejadorGuardarUsuario;
-        this.escritorMensaje = escritorMensaje;
+
     }
 
     @PostMapping
