@@ -7,19 +7,16 @@ import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 
 @Component
 public class MapperContacto {
 
     public List<RespuestaContacto> crearRespuestas(List<EntidadContacto> entidadContactos) {
-        var respuestaContactos = new ArrayList<RespuestaContacto>();
 
-        entidadContactos.forEach(entidadContacto -> {
-            respuestaContactos.add(this.crearRespuesta(entidadContacto));
-        });
-
-        return respuestaContactos;
+       return entidadContactos.stream().map(this::crearRespuesta)
+                .toList();
     }
 
     public RespuestaContacto crearRespuesta(EntidadContacto entidadContacto){

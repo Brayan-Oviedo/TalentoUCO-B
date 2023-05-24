@@ -1,7 +1,5 @@
 package co.talento.uco.postdetails.puerto.repositorio;
 
-import co.talento.uco.contacto.modelo.dominio.Contacto;
-import co.talento.uco.contacto.modelo.dtoRespuesta.RespuestaContacto;
 import co.talento.uco.postdetails.modelo.dominio.PostDetails;
 
 public interface RepositorioPoestDetails {
