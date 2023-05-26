@@ -10,7 +10,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface RepositorioContactoJpa extends JpaRepository<EntidadContacto, String> {
+public interface RepositorioContactoJpa extends JpaRepository<EntidadContacto, Long> {
 
     @Query(nativeQuery = true,
             value = "SELECT * FROM talentouco.contacto where correo== :correo")

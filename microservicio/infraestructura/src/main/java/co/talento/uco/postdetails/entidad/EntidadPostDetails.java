@@ -8,7 +8,7 @@ public class EntidadPostDetails {
     @Id
     @Column(name = "id_post_details")
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    private String idPostDetails;
+    private Long idPostDetails;
 
     private String titulo;
 
@@ -18,6 +18,10 @@ public class EntidadPostDetails {
     public EntidadPostDetails(String titulo, String descripcion) {
         this.titulo = titulo;
         this.descripcion = descripcion;
+    }
+
+    public Long getIdPostDetails() {
+        return idPostDetails;
     }
 
     public EntidadPostDetails() {}

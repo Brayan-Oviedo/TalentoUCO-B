@@ -1,10 +1,8 @@
 package co.talento.uco.oferta.comando.fabrica;
 
-import co.talento.uco.contacto.comando.RequestContactoTransaccion;
 import co.talento.uco.contacto.comando.fabrica.FabricaContacto;
-import co.talento.uco.contacto.modelo.dominio.Contacto;
-import co.talento.uco.oferta.comando.RequestOfertaTransaccion;
-import co.talento.uco.oferta.modelo.dominio.Oferta;
+import co.talento.uco.oferta.comando.SolicitudOfertaTransaccion;
+import co.talento.uco.oferta.modelo.dominio.OfertaDetalle;
 import co.talento.uco.postdetails.comando.fabrica.FabricaPostDetails;
 import co.talento.uco.usuario.comando.fabrica.FabricaUsuario;
 import lombok.RequiredArgsConstructor;
@@ -19,13 +17,13 @@ public class FabricaOferta {
     private final FabricaUsuario fabricaUsuario;
 
 
-    public Oferta crear(RequestOfertaTransaccion requestOfertaTransaccion){
-        return new Oferta(
-                this.fabricaUsuario.crear(requestOfertaTransaccion.getRequestUsuarioTransaccion()),
-                this.fabricaPostDetails.crear(requestOfertaTransaccion.getRequestPostDetails()),
-                this.fabricaContacto.crear(requestOfertaTransaccion.getRequestContactoTransaccion()),
-                requestOfertaTransaccion.isActive(),
-                requestOfertaTransaccion.getTags()
+    public OfertaDetalle crear(SolicitudOfertaTransaccion solicitudOfertaTransaccion){
+        return new OfertaDetalle(
+                this.fabricaPostDetails.crear(solicitudOfertaTransaccion.getRequestPostDetails()),
+                this.fabricaContacto.crear(solicitudOfertaTransaccion.getRequestContactoTransaccion()),
+                solicitudOfertaTransaccion.isEstaActivo(),
+                solicitudOfertaTransaccion.getTags()
         );
     }
+
 }

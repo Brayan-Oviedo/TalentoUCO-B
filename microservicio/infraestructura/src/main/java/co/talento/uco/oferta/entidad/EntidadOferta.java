@@ -17,16 +17,18 @@ public class EntidadOferta {
     @JoinColumn(name = "nombreUsuario")
     private EntidadUsuario entidadUsuario;
 
-    @OneToOne
+    @OneToOne(cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
     @JoinColumn(name = "id_post_details")
     private EntidadPostDetails entidadPostDetails;
 
-    @OneToOne
+    @OneToOne(cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
     @JoinColumn(name = "id_contacto")
     private EntidadContacto entidadContacto;
 
     private boolean isActive;
 
+    @Column
+    @ElementCollection(targetClass=String.class)
     private List<String> tags;
 
     public EntidadOferta(EntidadUsuario entidadUsuario, EntidadPostDetails entidadPostDetails, EntidadContacto entidadContacto, boolean isActive, List<String> tags) {

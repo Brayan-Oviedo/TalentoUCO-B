@@ -1,13 +1,13 @@
 server:
   port: 8001
   servlet:
-    context-path: /parking
+    context-path: /talentoUCO
 
 spring:
 
   datasource:
     driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://localhost:5432/parking
+    url: jdbc:postgresql://localhost:5432/talentoUCO
     username: postgres
     password: fanti
   
@@ -16,18 +16,6 @@ spring:
     hibernate:
       ddl-auto: create
 
-  rabbitmq:
-    host: localhost
-    port: 5672
-    username: guest
-    password: guest
-    virtual-host: /
-
-rabbitmq:
-  dynamic: false
-
-parking:
-  queue: parking
 
 jwt:
   secret: fanti

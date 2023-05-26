@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 public class ManejadorEliminarContacto {
     private final ServicioEliminarContacto servicioEliminarContacto;
 
-    public boolean ejecutar(String id){
+    public boolean ejecutar(Long id){
         return this.servicioEliminarContacto.ejecutar(id);
     }
 }

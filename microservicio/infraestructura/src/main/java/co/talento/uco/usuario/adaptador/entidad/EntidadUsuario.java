@@ -30,7 +30,6 @@ public class EntidadUsuario {
         this.roles = roles;
     }
 
-
     public String getNombreUsuario() {
         return nombreUsuario;
     }

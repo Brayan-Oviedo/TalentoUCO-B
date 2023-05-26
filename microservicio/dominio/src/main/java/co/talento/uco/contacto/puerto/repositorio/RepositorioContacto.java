@@ -10,7 +10,7 @@ public interface RepositorioContacto {
 
     boolean existeCorreo(Contacto contacto);
 
-    boolean eliminarPorId(String id);
+    boolean eliminarPorId(Long id);
 
-    boolean existePorId(String id);
+    boolean existePorId(Long id);
 }

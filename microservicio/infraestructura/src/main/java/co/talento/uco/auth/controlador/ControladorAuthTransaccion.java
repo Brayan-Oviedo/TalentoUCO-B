@@ -2,7 +2,7 @@ package co.talento.uco.auth.controlador;
 
 import co.talento.uco.auth.adaptador.Auth;
 import co.talento.uco.jwToken.modelo.dto.RespuestaJwToken;
-import co.talento.uco.usuario.comando.RequestUsuarioTransaccion;
+import co.talento.uco.usuario.comando.SolicitudUsuarioTransaccion;
 import co.talento.uco.usuario.comando.fabrica.FabricaUsuario;
 import co.talento.uco.usuario.comando.manejador.ManejadorGuardarUsuario;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,15 +25,15 @@ public class ControladorAuthTransaccion {
 
     }
 
-    @PostMapping
-    public RespuestaJwToken ingresarUsuario(@RequestBody RequestUsuarioTransaccion requestUsuarioTransaccion){
-        var usuario = this.fabricaUsuario.crear(requestUsuarioTransaccion);
+    @PutMapping
+    public RespuestaJwToken ingresarUsuario(@RequestBody SolicitudUsuarioTransaccion solicitudUsuarioTransaccion){
+        var usuario = this.fabricaUsuario.crear(solicitudUsuarioTransaccion);
         return this.auth.login(usuario);
     }
 
-    @PutMapping
-    public boolean registrarUsuario(@RequestBody RequestUsuarioTransaccion requestUsuarioTransaccion) {
-        return this.manejadorGuardarUsuario.ejecutar(requestUsuarioTransaccion);
+    @PostMapping
+    public boolean registrarUsuario(@RequestBody SolicitudUsuarioTransaccion solicitudUsuarioTransaccion) {
+        return this.manejadorGuardarUsuario.ejecutar(solicitudUsuarioTransaccion);
     }
 
 }

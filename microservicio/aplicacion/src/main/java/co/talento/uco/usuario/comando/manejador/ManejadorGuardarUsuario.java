@@ -1,6 +1,6 @@
 package co.talento.uco.usuario.comando.manejador;
 
-import co.talento.uco.usuario.comando.RequestUsuarioTransaccion;
+import co.talento.uco.usuario.comando.SolicitudUsuarioTransaccion;
 import co.talento.uco.usuario.comando.fabrica.FabricaUsuario;
 import co.talento.uco.usuario.servicio.ServicioGuardarUsuario;
 import org.springframework.stereotype.Component;
@@ -17,8 +17,8 @@ public class ManejadorGuardarUsuario {
         this.fabricaUsuario = fabricaUsuario;
     }
 
-    public boolean ejecutar(RequestUsuarioTransaccion requestUsuarioTransaccion) {
-        var usuario = this.fabricaUsuario.crear(requestUsuarioTransaccion);
+    public boolean ejecutar(SolicitudUsuarioTransaccion solicitudUsuarioTransaccion) {
+        var usuario = this.fabricaUsuario.crear(solicitudUsuarioTransaccion);
         return this.servicioGuardarUsuario.ejecutar(usuario);
     }
 }

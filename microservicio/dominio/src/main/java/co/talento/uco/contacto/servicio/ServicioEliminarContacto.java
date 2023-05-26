@@ -15,13 +15,13 @@ public class ServicioEliminarContacto {
     }
 
 
-    public boolean ejecutar(String id){
+    public boolean ejecutar(Long id){
         validarExistencia(id);
         return this.repositorioContacto.eliminarPorId(id);
     }
 
 
-    private void validarExistencia(String id){
+    private void validarExistencia(Long id){
         if (!this.repositorioContacto.existePorId(id)) {
             throw new ExcepcionInexistente(NO_SE_PUDO_ELIMINAR_EL_VEHICULO);
         }

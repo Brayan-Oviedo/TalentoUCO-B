@@ -30,13 +30,13 @@ public class RepositorioPostDetailsSql implements RepositorioPoestDetails {
     }
 
     @Override
-    public boolean eliminarPorId(String id) {
+    public boolean eliminarPorId(Long id) {
         this.repositorioPostDetailsJpa.deleteById(id);
         return true;
     }
 
     @Override
-    public boolean existePorId(String id) {
+    public boolean existePorId(Long id) {
         var lista = this.repositorioPostDetailsJpa.findById(id);
         if (lista == null) {
             return false;

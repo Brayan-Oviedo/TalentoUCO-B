@@ -1,17 +1,21 @@
-package co.talento.uco.usuario.modelo.dtoRespuesta;
+package co.talento.uco.usuario.comando;
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-
 import java.util.Set;
 
 @Getter
 @Setter
-@NoArgsConstructor
 @AllArgsConstructor
-public class RespuestaUsuarioPerfil {
+@NoArgsConstructor
+public class SolicitudUsuarioTransaccion {
 
     private String nombreUsuario;
+    private String contrasena;
     private Set<String> roles;
 }
+
+
+

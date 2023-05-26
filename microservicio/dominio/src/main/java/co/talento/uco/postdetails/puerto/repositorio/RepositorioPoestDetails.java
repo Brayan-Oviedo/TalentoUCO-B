@@ -8,7 +8,7 @@ public interface RepositorioPoestDetails {
 
     boolean actualizar(PostDetails postDetails);
 
-    boolean eliminarPorId(String id);
+    boolean eliminarPorId(Long id);
 
-    boolean existePorId(String id);
+    boolean existePorId(Long id);
 }
