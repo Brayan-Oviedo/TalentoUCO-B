@@ -2,6 +2,7 @@ package co.talento.uco.oferta.entidad;
 
 import co.talento.uco.contacto.entidad.EntidadContacto;
 import co.talento.uco.postdetails.entidad.EntidadPostDetails;
+import co.talento.uco.postulacion.entidad.EntidadPostulacion;
 import co.talento.uco.usuario.adaptador.entidad.EntidadUsuario;
 
 import javax.persistence.*;
@@ -25,18 +26,22 @@ public class EntidadOferta {
     @JoinColumn(name = "id_contacto")
     private EntidadContacto entidadContacto;
 
+    @OneToMany(mappedBy = "postulacion", cascade = CascadeType.ALL)
+    private List<EntidadPostulacion> pustulaciones;
+
     private boolean isActive;
 
     @Column
     @ElementCollection(targetClass=String.class)
     private List<String> tags;
 
-    public EntidadOferta(EntidadUsuario entidadUsuario, EntidadPostDetails entidadPostDetails, EntidadContacto entidadContacto, boolean isActive, List<String> tags) {
+    public EntidadOferta(EntidadUsuario entidadUsuario, EntidadPostDetails entidadPostDetails, EntidadContacto entidadContacto, boolean isActive, List<String> tags, List<EntidadPostulacion> pustulaciones) {
         this.entidadUsuario = entidadUsuario;
         this.entidadPostDetails = entidadPostDetails;
         this.entidadContacto = entidadContacto;
         this.isActive = isActive;
         this.tags = tags;
+        this.pustulaciones = pustulaciones;
     }
 
     public Long getIdOferta() {
@@ -61,5 +66,9 @@ public class EntidadOferta {
 
     public List<String> getTags() {
         return tags;
+    }
+
+    public List<EntidadPostulacion> getPustulaciones() {
+        return pustulaciones;
     }
 }

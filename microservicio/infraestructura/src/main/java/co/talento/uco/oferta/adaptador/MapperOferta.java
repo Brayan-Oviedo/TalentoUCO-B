@@ -27,8 +27,9 @@ public class MapperOferta {
                 this.mapperUsuario.crearEntidad(oferta.getUsuario()),
                 this.mapperPostDetails.crearEntidad(oferta.getPostDetails()),
                 this.mapperContacto.crearEntidad(oferta.getContacto()),
-                oferta.isEstaActiva(),
-                oferta.getTags()
+                oferta.estaActiva(),
+                oferta.getTags(),
+                oferta.getPostulaciones()
         );
     }
 }

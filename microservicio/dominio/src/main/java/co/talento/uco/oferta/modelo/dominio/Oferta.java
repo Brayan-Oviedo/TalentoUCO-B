@@ -2,6 +2,7 @@ package co.talento.uco.oferta.modelo.dominio;
 
 import co.talento.uco.contacto.modelo.dominio.Contacto;
 import co.talento.uco.postdetails.modelo.dominio.PostDetails;
+import co.talento.uco.postulacion.modelo.dominio.Postulacion;
 import co.talento.uco.usuario.modelo.dominio.Usuario;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -16,4 +17,7 @@ public class Oferta {
     private Contacto contacto;
     private boolean estaActiva;
     private List<String> tags;
+    private List<Postulacion> postulaciones;
+
+
 }

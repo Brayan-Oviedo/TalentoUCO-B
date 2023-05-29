@@ -8,7 +8,7 @@ public class EntidadContacto {
     @Id
     @Column(name = "id_contacto")
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    private Long idContacto;
+    private Long id;
     private String nombre;
     private String correo;
     private String celular;
