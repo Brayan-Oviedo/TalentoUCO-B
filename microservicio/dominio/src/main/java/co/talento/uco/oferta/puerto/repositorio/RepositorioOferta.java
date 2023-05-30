@@ -10,8 +10,6 @@ public interface RepositorioOferta {
 
     boolean eliminarPorId(Long id);
 
-    RespuestaOferta consultarOferta(Long id);
 
-    boolean guardarPostulacion(Postulacion postulacion, Long idOferta);
 
 }

@@ -44,6 +44,16 @@ public class EntidadOferta {
         this.pustulaciones = pustulaciones;
     }
 
+    public EntidadOferta(Long idOferta, EntidadUsuario entidadUsuario, EntidadPostDetails entidadPostDetails, EntidadContacto entidadContacto, List<EntidadPostulacion> pustulaciones, boolean isActive, List<String> tags) {
+        this.idOferta = idOferta;
+        this.entidadUsuario = entidadUsuario;
+        this.entidadPostDetails = entidadPostDetails;
+        this.entidadContacto = entidadContacto;
+        this.pustulaciones = pustulaciones;
+        this.isActive = isActive;
+        this.tags = tags;
+    }
+
     public Long getIdOferta() {
         return idOferta;
     }

@@ -10,8 +10,9 @@ import lombok.Getter;
 import java.util.List;
 
 @Getter
-@AllArgsConstructor
 public class Oferta {
+
+    private Long id;
     private Usuario usuario;
     private PostDetails postDetails;
     private Contacto contacto;
@@ -19,5 +20,22 @@ public class Oferta {
     private List<String> tags;
     private List<Postulacion> postulaciones;
 
+    public Oferta(Usuario usuario, PostDetails postDetails, Contacto contacto, boolean estaActiva, List<String> tags, List<Postulacion> postulaciones) {
+        this.usuario = usuario;
+        this.postDetails = postDetails;
+        this.contacto = contacto;
+        this.estaActiva = estaActiva;
+        this.tags = tags;
+        this.postulaciones = postulaciones;
+    }
 
+    public Oferta(Long id, Usuario usuario, PostDetails postDetails, Contacto contacto, boolean estaActiva, List<String> tags, List<Postulacion> postulaciones) {
+        this.id = id;
+        this.usuario = usuario;
+        this.postDetails = postDetails;
+        this.contacto = contacto;
+        this.estaActiva = estaActiva;
+        this.tags = tags;
+        this.postulaciones = postulaciones;
+    }
 }

@@ -43,5 +43,13 @@ public class MapperUsuario {
         );
     }
 
+    public EntidadUsuario crearEntidadDeRespuesta(RespuestaUsuario respuestaUsuario){
+        return new EntidadUsuario(
+                respuestaUsuario.getNombreUsuario(),
+                respuestaUsuario.getContrasena(),
+                this.mapperRol.crearEntidades(respuestaUsuario.getRoles())
+        );
+    }
+
 
 }

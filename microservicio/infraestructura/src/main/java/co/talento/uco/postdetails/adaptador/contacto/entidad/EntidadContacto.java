@@ -23,6 +23,15 @@ public class EntidadContacto {
         this.direccion = direccion;
     }
 
+    public EntidadContacto(Long id, String nombre, String correo, String celular, String ciudad, String direccion) {
+        this.id = id;
+        this.nombre = nombre;
+        this.correo = correo;
+        this.celular = celular;
+        this.ciudad = ciudad;
+        this.direccion = direccion;
+    }
+
     public EntidadContacto() {
 
     }

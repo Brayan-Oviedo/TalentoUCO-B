@@ -41,19 +41,4 @@ public class RepositorioOfertaSql implements RepositorioOferta {
         return true;
     }
 
-    @Override
-    public RespuestaOferta consultarOferta(Long id) {
-        var entidadOferta= this.repositorioOfertaJpa.findById(id).get();
-        return this.mapperOferta.crearRespuesta(entidadOferta);
-    }
-
-    @Override
-    public boolean guardarPostulacion(Postulacion postulacion, Long idOferta) {
-        var respuestOferta = this.repositorioOferta.consultarOferta(idOferta);
-        var lista = new ArrayList<RespuestaPostulacion>();
-        lista.add(this.mapperPostulacion.crearRespuesta(this.mapperPostulacion.crearEntidad(postulacion)));
-        respuestOferta.setRespuestaPostulacions(lista);
-        this.repositorioOfertaJpa.save(respuestOferta);
-        return false;
-    }
 }

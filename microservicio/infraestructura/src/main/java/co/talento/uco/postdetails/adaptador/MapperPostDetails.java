@@ -21,4 +21,12 @@ public class MapperPostDetails {
                 entidadPostDetails.getDescripcion()
         );
     }
+
+    public EntidadPostDetails crearEntidadDeRespuesta(RespuestaPostDetails respuestaPostDetails){
+        return new EntidadPostDetails(
+                respuestaPostDetails.getId(),
+                respuestaPostDetails.getTitulo(),
+                respuestaPostDetails.getDescripcion()
+        );
+    }
 }
