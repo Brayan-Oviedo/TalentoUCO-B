@@ -27,6 +27,14 @@ public class MapperUsuario {
         );
     }
 
+    public Usuario crearDomio(EntidadUsuario entidadUsuario) {
+        return new Usuario(
+                entidadUsuario.getNombreUsuario(),
+                entidadUsuario.getContrasena(),
+                this.mapperRol.crearRespuestas(entidadUsuario.getRoles())
+        );
+    }
+
     public EntidadUsuario crearEntidad(Usuario usuario) {
         return new EntidadUsuario(
                 usuario.getNombreUsuario(),
@@ -34,5 +42,6 @@ public class MapperUsuario {
                 this.mapperRol.crearEntidades(usuario.getRoles())
         );
     }
+
 
 }

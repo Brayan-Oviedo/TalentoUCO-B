@@ -1,7 +1,7 @@
-package co.talento.uco.contacto.adaptador;
+package co.talento.uco.postdetails.adaptador.contacto.adaptador;
 
 
-import co.talento.uco.contacto.entidad.EntidadContacto;
+import co.talento.uco.postdetails.adaptador.contacto.entidad.EntidadContacto;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;

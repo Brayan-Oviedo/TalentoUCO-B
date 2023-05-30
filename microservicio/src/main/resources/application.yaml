@@ -6,16 +6,28 @@ server:
 spring:
 
   datasource:
-    driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://localhost:5432/talentoUCO
-    username: postgres
-    password: fanti
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/talentouco?useSSL=false
+    username: root
+    password: 12345678
   
   jpa:
     show-sql: true
     hibernate:
       ddl-auto: create
 
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+    virtual-host: /
+
+rabbitmq:
+  dynamic: false
+
+parking:
+  queue: parking
 
 jwt:
   secret: fanti

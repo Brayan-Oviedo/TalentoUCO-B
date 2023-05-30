@@ -8,9 +8,13 @@ import lombok.*;
 @AllArgsConstructor
 @NoArgsConstructor
 public class RespuestaContacto {
+    private Long id;
     private String nombre;
     private String correo;
     private String celular;
     private String ciudad;
     private String direccion;
+
 }
+
+

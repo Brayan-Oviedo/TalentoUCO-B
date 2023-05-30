@@ -1,4 +1,4 @@
-package co.talento.uco.contacto.entidad;
+package co.talento.uco.postdetails.adaptador.contacto.entidad;
 
 import javax.persistence.*;
 
@@ -25,6 +25,10 @@ public class EntidadContacto {
 
     public EntidadContacto() {
 
+    }
+
+    public Long getId() {
+        return id;
     }
 
     public String getNombre() {

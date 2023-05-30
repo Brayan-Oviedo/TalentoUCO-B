@@ -1,13 +1,11 @@
-package co.talento.uco.contacto.adaptador;
+package co.talento.uco.postdetails.adaptador.contacto.adaptador;
 
-import co.talento.uco.contacto.entidad.EntidadContacto;
+import co.talento.uco.postdetails.adaptador.contacto.entidad.EntidadContacto;
 import co.talento.uco.contacto.modelo.dominio.Contacto;
 import co.talento.uco.contacto.modelo.dtoRespuesta.RespuestaContacto;
 import org.springframework.stereotype.Component;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 
 @Component
@@ -22,6 +20,7 @@ public class MapperContacto {
     public RespuestaContacto crearRespuesta(EntidadContacto entidadContacto){
 
         return new RespuestaContacto(
+                entidadContacto.getId(),
                 entidadContacto.getNombre(),
                 entidadContacto.getCorreo(),
                 entidadContacto.getCelular(),
@@ -39,4 +38,6 @@ public class MapperContacto {
                 contacto.getDireccion()
         );
     }
+
+
 }

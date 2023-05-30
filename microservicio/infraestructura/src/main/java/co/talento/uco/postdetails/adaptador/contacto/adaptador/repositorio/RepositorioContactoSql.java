@@ -1,8 +1,8 @@
-package co.talento.uco.contacto.adaptador.repositorio;
+package co.talento.uco.postdetails.adaptador.contacto.adaptador.repositorio;
 
-import co.talento.uco.contacto.adaptador.MapperContacto;
-import co.talento.uco.contacto.adaptador.RepositorioContactoJpa;
-import co.talento.uco.contacto.entidad.EntidadContacto;
+import co.talento.uco.postdetails.adaptador.contacto.adaptador.MapperContacto;
+import co.talento.uco.postdetails.adaptador.contacto.adaptador.RepositorioContactoJpa;
+import co.talento.uco.postdetails.adaptador.contacto.entidad.EntidadContacto;
 import co.talento.uco.contacto.modelo.dominio.Contacto;
 import co.talento.uco.contacto.modelo.dtoRespuesta.RespuestaContacto;
 import co.talento.uco.contacto.puerto.repositorio.RepositorioContacto;

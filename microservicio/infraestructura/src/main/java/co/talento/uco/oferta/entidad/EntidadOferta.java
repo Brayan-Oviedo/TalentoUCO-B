@@ -1,6 +1,6 @@
 package co.talento.uco.oferta.entidad;
 
-import co.talento.uco.contacto.entidad.EntidadContacto;
+import co.talento.uco.postdetails.adaptador.contacto.entidad.EntidadContacto;
 import co.talento.uco.postdetails.entidad.EntidadPostDetails;
 import co.talento.uco.postulacion.entidad.EntidadPostulacion;
 import co.talento.uco.usuario.adaptador.entidad.EntidadUsuario;

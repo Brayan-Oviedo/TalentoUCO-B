@@ -1,13 +1,9 @@
 package co.talento.uco.postulacion.entidad;
 
-import co.talento.uco.contacto.entidad.EntidadContacto;
-import co.talento.uco.oferta.entidad.EntidadOferta;
-import co.talento.uco.postdetails.entidad.EntidadPostDetails;
 import co.talento.uco.usuario.adaptador.entidad.EntidadUsuario;
 
 import javax.persistence.*;
 import java.util.Date;
-import java.util.List;
 
 @Entity
 public class EntidadPostulacion {
