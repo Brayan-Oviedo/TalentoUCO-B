@@ -1,11 +1,9 @@
 package co.talento.uco.postulacion.servicio;
 
-import co.talento.uco.oferta.modelo.dtoRespuesta.RespuestaOferta;
-import co.talento.uco.oferta.puerto.repositorio.DaoOferta;
-import co.talento.uco.oferta.servicio.ServicioGuardarOferta;
+import co.talento.uco.oferta.modelo.dominio.OfertaDetalle;
 import co.talento.uco.oferta.servicio.ServicioGuardarOfertaConPostulacion;
 import co.talento.uco.postulacion.modelo.dominio.Postulacion;
-import co.talento.uco.postulacion.modelo.respuesta.RespuestaPostulacion;
+import co.talento.uco.usuario.modelo.dtoRespuesta.RespuestaUsuario;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -13,13 +11,11 @@ import org.springframework.stereotype.Service;
 @RequiredArgsConstructor
 public class ServicioGuardarPostulacion {
 
-    private final DaoOferta daoOferta;
 
     private final ServicioGuardarOfertaConPostulacion servicioGuardarOfertaConPostulacion;
 
-    public RespuestaOferta ejecutar(Long id, Postulacion postulacion){
-        var oferta = this.daoOferta.consultarOferta(id);
-        this.servicioGuardarOferta.ejecutar(o)
+    public Long guardarPostulacion(OfertaDetalle ofertaDetalle, RespuestaUsuario respuestaUsuario, Postulacion postulacion){
+        return this.servicioGuardarOfertaConPostulacion.ejecutar(ofertaDetalle,respuestaUsuario,postulacion);
     }
 
 }

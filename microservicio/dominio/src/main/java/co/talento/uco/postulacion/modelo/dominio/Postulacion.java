@@ -31,5 +31,8 @@ public class Postulacion {
         this.adjunto = adjunto;
     }
 
-
+    public Postulacion(Date fecha, String adjunto) {
+        this.fecha = fecha;
+        this.adjunto = adjunto;
+    }
 }

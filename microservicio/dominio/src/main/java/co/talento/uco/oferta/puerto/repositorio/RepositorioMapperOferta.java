@@ -2,13 +2,10 @@ package co.talento.uco.oferta.puerto.repositorio;
 
 import co.talento.uco.oferta.modelo.dominio.Oferta;
 import co.talento.uco.oferta.modelo.dtoRespuesta.RespuestaOferta;
-import co.talento.uco.postulacion.modelo.dominio.Postulacion;
 
-public interface RepositorioOferta {
+public interface RepositorioMapperOferta {
+    public RespuestaOferta crearRespuesta(Oferta Oferta);
 
-    Long guardar(Oferta oferta);
-
-    boolean eliminarPorId(Long id);
 
 
 }

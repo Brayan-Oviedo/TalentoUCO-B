@@ -1,5 +1,6 @@
 package co.talento.uco.oferta.servicio;
 
+import co.talento.uco.oferta.modelo.dominio.Oferta;
 import co.talento.uco.oferta.modelo.dominio.OfertaDetalle;
 import co.talento.uco.oferta.puerto.repositorio.RepositorioOferta;
 import co.talento.uco.postulacion.modelo.dominio.Postulacion;
@@ -13,8 +14,7 @@ public class ServicioGuardarOfertaConPostulacion {
     private final RepositorioOferta repositorioOferta;
     private final ServicioProcesarOfertaConPostulacion servicioProcesarOfertaConPostulacion;
 
-    public Long ejecutar(OfertaDetalle ofertaDetalle, RespuestaUsuario respuestaUsuario, Postulacion postulacion) {
-        var oferta = this.servicioProcesarOfertaConPostulacion.ejecutar(ofertaDetalle, respuestaUsuario, postulacion);
+    public Long ejecutar(Oferta oferta) {
         return this.repositorioOferta.guardar(oferta);
     }
 }

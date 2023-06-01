@@ -20,6 +20,6 @@ public class DaoOfertaSql implements DaoOferta {
     @Override
     public RespuestaOferta consultarOferta(Long id) {
         var entidadOferta= this.repositorioOfertaJpa.findById(id).get();
-        return this.mapperOferta.crearRespuesta(entidadOferta);
+       return this.mapperOferta.crearRespuestaDesdeEntidad(entidadOferta);
     }
 }

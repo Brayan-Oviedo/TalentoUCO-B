@@ -31,10 +31,10 @@ public class MapperPostulacion {
 
 
 
-    /*public RespuestaPostulacion crearRespuesta(EntidadPostulacion entidadPostulacion){
+    public RespuestaPostulacion crearRespuesta(EntidadPostulacion entidadPostulacion){
         return new RespuestaPostulacion(
                 entidadPostulacion.getId(),
-                this.mapperUsuario.crearDomio(entidadPostulacion.getPostulante()),
+                this.mapperUsuario.crearRespuesta(entidadPostulacion.getPostulante()),
                 entidadPostulacion.getFecha(),
                 entidadPostulacion.getAdjunto()
         );
@@ -42,9 +42,9 @@ public class MapperPostulacion {
 
     public List<RespuestaPostulacion> crearListaRespuesta(List<EntidadPostulacion> entidadPostulacions){
         return entidadPostulacions.stream().map(this::crearRespuesta).toList();
-    }*/
+    }
 
-    public Postulacion crearDominio(EntidadPostulacion entidadPostulacion){
+    public Postulacion crearDominioConId(EntidadPostulacion entidadPostulacion){
         return new Postulacion(
           entidadPostulacion.getId(),
           mapperUsuario.crearDomio(entidadPostulacion.getPostulante()),
@@ -53,7 +53,7 @@ public class MapperPostulacion {
         );
     }
 
-    public List<Postulacion> crearListaDominio(List<EntidadPostulacion> entidadPostulacions){
+    public List<Postulacion> crearListaDominioConId(List<EntidadPostulacion> entidadPostulacions){
       return entidadPostulacions.stream().map(this::crearDominio).toList();
     }
 

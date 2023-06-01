@@ -2,6 +2,7 @@ package co.talento.uco.postulacion.adaptador.repositorio;
 
 import co.talento.uco.oferta.adaptador.MapperOferta;
 import co.talento.uco.oferta.adaptador.RepositorioOfertaJpa;
+import co.talento.uco.oferta.modelo.dominio.Oferta;
 import co.talento.uco.oferta.modelo.dtoRespuesta.RespuestaOferta;
 import co.talento.uco.oferta.puerto.repositorio.RepositorioOferta;
 import co.talento.uco.postulacion.adaptador.MapperPostulacion;
@@ -27,9 +28,4 @@ public class RepositorioPostulacionSql implements RepositorioPostulacion {
     }
 
 
-    @Override
-    public Long guardarPostulacion(RespuestaOferta respuestaOferta) {
-        var entidadOferta = this.mapperOferta.crearEntidadOfertaConId(respuestaOferta);
-        return this.repositorioOfertaJpa.save(entidadOferta).getIdOferta();
-    }
 }

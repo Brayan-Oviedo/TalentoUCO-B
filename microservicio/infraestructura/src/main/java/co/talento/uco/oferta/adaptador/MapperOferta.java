@@ -1,5 +1,6 @@
 package co.talento.uco.oferta.adaptador;
 
+import co.talento.uco.oferta.puerto.repositorio.RepositorioMapperOferta;
 import co.talento.uco.postdetails.adaptador.contacto.adaptador.MapperContacto;
 import co.talento.uco.oferta.entidad.EntidadOferta;
 import co.talento.uco.oferta.modelo.dominio.Oferta;
@@ -11,7 +12,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 
-public class MapperOferta {
+public class MapperOferta implements RepositorioMapperOferta {
 
     private final MapperContacto mapperContacto;
     private final MapperPostDetails mapperPostDetails;
@@ -38,7 +39,7 @@ public class MapperOferta {
         );
     }
 
-   /* public RespuestaOferta crearRespuesta(EntidadOferta entidadOferta){
+    public RespuestaOferta crearRespuestaDesdeEntidad(EntidadOferta entidadOferta){
         return new RespuestaOferta(
                 entidadOferta.getIdOferta(),
                 this.mapperUsuario.crearRespuesta(entidadOferta.getEntidadUsuario()),
@@ -46,9 +47,9 @@ public class MapperOferta {
                 this.mapperContacto.crearRespuesta(entidadOferta.getEntidadContacto()),
                 entidadOferta.isActive(),
                 entidadOferta.getTags(),
-                this.mapperPostulacion.crearListaDominio(entidadOferta.getPustulaciones())
+                this.mapperPostulacion.crearListaRespuesta(entidadOferta.getPustulaciones())
         );
-    }*/
+    }
 
     public Oferta crearDominio(EntidadOferta entidadOferta){
         return new Oferta(
@@ -58,19 +59,33 @@ public class MapperOferta {
                 this.mapperContacto.crearDominio(entidadOferta.getEntidadContacto()),
                 entidadOferta.isActive(),
                 entidadOferta.getTags(),
-                this.mapperPostulacion.crearListaDominio(entidadOferta.getPustulaciones())
+                this.mapperPostulacion.crearListaDominioConId(entidadOferta.getPustulaciones())
         );
     }
 
-    public EntidadOferta crearEntidadOfertaConId(RespuestaOferta respuestaOferta){
+    @Override
+    public RespuestaOferta crearRespuesta(Oferta Oferta) {
+        /*return new RespuestaOferta(
+                Oferta.getId(),
+                this.mapperUsuario.crearRespuesta(entidadOferta.getEntidadUsuario()),
+                this.mapperPostDetails.crearRespuesta(entidadOferta.getEntidadPostDetails()),
+                this.mapperContacto.crearRespuesta(entidadOferta.getEntidadContacto()),
+                entidadOferta.isActive(),
+                entidadOferta.getTags(),
+                this.mapperPostulacion.crearListaRespuesta(entidadOferta.getPustulaciones())
+        );*/
+        return null;
+    }
+
+    /*public EntidadOferta crearEntidadOfertaConId(RespuestaOferta respuestaOferta){
         return new EntidadOferta(
                 respuestaOferta.getId(),
                 this.mapperUsuario.crearEntidadDeRespuesta(respuestaOferta.getRespuestaUsuario()),
                 this.mapperPostDetails.crearEntidadDeRespuesta(respuestaOferta.getRespuestaPostDetails()),
                 this.mapperContacto.crearEntidadDeRespuesta(respuestaOferta.getRespuestaContacto()),
-                this.mapperPostulacion.crearListaEntidad(respuestaOferta.getPostulaciones()),
+                this.mapperPostulacion.crearListaEntidad(respuestaOferta.getRespuestaPostulacions()),
                 respuestaOferta.isEstaActiva(),
                 respuestaOferta.getTags()
                 );
-    }
+    }*/
 }

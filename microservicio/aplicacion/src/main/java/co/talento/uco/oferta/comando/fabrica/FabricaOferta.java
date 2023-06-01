@@ -34,10 +34,9 @@ public class FabricaOferta {
         );
     }
 
-    public Oferta crearDominio(RespuestaOferta respuestaOferta){
-        return new Oferta(
+    public OfertaDetalle crearOfertaDetalleDeSolicitud(RespuestaOferta respuestaOferta){
+        return new OfertaDetalle(
                 respuestaOferta.getId(),
-                fabricaUsuario.crear(respuestaOferta.getRespuestaUsuariosuario()),
                 fabricaPostDetails.crearDominio(respuestaOferta.getRespuestaPostDetails()),
                 fabricaContacto.crearDominio(respuestaOferta.getRespuestaContacto()),
                 respuestaOferta.isEstaActiva(),
@@ -45,5 +44,7 @@ public class FabricaOferta {
                 fabricaPostulacion.crearListaDominio(respuestaOferta.getRespuestaPostulacions())
         );
     }
+
+
 
 }

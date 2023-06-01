@@ -5,6 +5,6 @@ import co.talento.uco.postulacion.modelo.dominio.Postulacion;
 
 public interface RepositorioPostulacion {
 
-    public Long guardarPostulacion(RespuestaOferta respuestaOferta);
+
 
 }

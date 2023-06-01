@@ -42,14 +42,4 @@ public class RepositorioOfertaSql implements RepositorioOferta {
     }
 
 
-
-    @Override
-    public boolean guardarPostulacion(Postulacion postulacion, Long idOferta) {
-        var respuestOferta = this.repositorioOferta.consultarOferta(idOferta);
-        var lista = new ArrayList<RespuestaPostulacion>();
-        lista.add(this.mapperPostulacion.crearRespuesta(this.mapperPostulacion.crearEntidad(postulacion)));
-        respuestOferta.setRespuestaPostulacions(lista);
-        this.repositorioOfertaJpa.save(respuestOferta);
-        return false;
-    }
 }
