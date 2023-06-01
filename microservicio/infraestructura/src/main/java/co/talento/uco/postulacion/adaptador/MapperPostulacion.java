@@ -56,4 +56,16 @@ public class MapperPostulacion {
     public List<Postulacion> crearListaDominio(List<EntidadPostulacion> entidadPostulacions){
       return entidadPostulacions.stream().map(this::crearDominio).toList();
     }
+
+    public Postulacion crearDominio(EntidadPostulacion entidadPostulacion){
+        return new Postulacion(
+                this.mapperUsuario.crearDomio(entidadPostulacion.getPostulante()),
+                entidadPostulacion.getFecha(),
+                entidadPostulacion.getAdjunto()
+                );
+    }
+
+    public List<Postulacion> crearListaDominio(List<EntidadPostulacion> entidadPostulacions){
+        return entidadPostulacions.stream().map(this::crearDominio).toList();
+    }
 }

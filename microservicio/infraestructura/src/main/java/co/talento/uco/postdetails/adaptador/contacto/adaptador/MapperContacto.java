@@ -51,4 +51,15 @@ public class MapperContacto {
     }
 
 
+    public EntidadContacto crearEntidadDeRespuesta(RespuestaContacto respuestaContacto){
+        return new EntidadContacto(
+                respuestaContacto.getId(),
+                respuestaContacto.getNombre(),
+                respuestaContacto.getCorreo(),
+                respuestaContacto.getCelular(),
+                respuestaContacto.getCiudad(),
+                respuestaContacto.getDireccion()
+        );
+    }
+
 }

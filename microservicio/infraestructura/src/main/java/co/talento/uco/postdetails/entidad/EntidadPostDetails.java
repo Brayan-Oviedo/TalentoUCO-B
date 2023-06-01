@@ -20,6 +20,12 @@ public class EntidadPostDetails {
         this.descripcion = descripcion;
     }
 
+    public EntidadPostDetails(Long idPostDetails, String titulo, String descripcion) {
+        this.idPostDetails = idPostDetails;
+        this.titulo = titulo;
+        this.descripcion = descripcion;
+    }
+
     public Long getIdPostDetails() {
         return idPostDetails;
     }
