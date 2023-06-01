@@ -1,6 +1,7 @@
 package co.talento.uco.postulacion.modelo.respuesta;
 
 import co.talento.uco.usuario.modelo.dominio.Usuario;
+import co.talento.uco.usuario.modelo.dtoRespuesta.RespuestaUsuario;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -14,7 +15,7 @@ import java.util.Date;
 @NoArgsConstructor
 public class RespuestaPostulacion {
     private Long id;
-    private Usuario postulante;
+    private RespuestaUsuario respuestaUsuario;
     private Date fecha;
     private String adjunto;
 }

@@ -39,5 +39,16 @@ public class MapperContacto {
         );
     }
 
+    public Contacto crearDominio(EntidadContacto entidadContacto){
+        return new Contacto(
+                entidadContacto.getId(),
+                entidadContacto.getNombre(),
+                entidadContacto.getCorreo(),
+                entidadContacto.getCelular(),
+                entidadContacto.getCiudad(),
+                entidadContacto.getDireccion()
+        );
+    }
+
 
 }

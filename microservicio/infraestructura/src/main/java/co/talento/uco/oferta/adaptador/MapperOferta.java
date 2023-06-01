@@ -38,7 +38,7 @@ public class MapperOferta {
         );
     }
 
-    public RespuestaOferta crearRespuesta(EntidadOferta entidadOferta){
+   /* public RespuestaOferta crearRespuesta(EntidadOferta entidadOferta){
         return new RespuestaOferta(
                 entidadOferta.getIdOferta(),
                 this.mapperUsuario.crearRespuesta(entidadOferta.getEntidadUsuario()),
@@ -47,6 +47,18 @@ public class MapperOferta {
                 entidadOferta.isActive(),
                 entidadOferta.getTags(),
                 this.mapperPostulacion.crearListaRespuesta(entidadOferta.getPustulaciones())
+        );
+    }*/
+
+    public Oferta crearDominio(EntidadOferta entidadOferta){
+        return new Oferta(
+                entidadOferta.getIdOferta(),
+                this.mapperUsuario.crearDomio(entidadOferta.getEntidadUsuario()),
+                this.mapperPostDetails.crearDominio(entidadOferta.getEntidadPostDetails()),
+                this.mapperContacto.crearDominio(entidadOferta.getEntidadContacto()),
+                entidadOferta.isActive(),
+                entidadOferta.getTags(),
+                this.mapperPostulacion.crearListaDominio(entidadOferta.getPustulaciones())
         );
     }
 }

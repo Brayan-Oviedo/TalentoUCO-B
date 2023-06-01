@@ -21,4 +21,12 @@ public class MapperPostDetails {
                 entidadPostDetails.getDescripcion()
         );
     }
+
+    public PostDetails crearDominio(EntidadPostDetails entidadPostDetails){
+        return new PostDetails(
+                entidadPostDetails.getIdPostDetails(),
+                entidadPostDetails.getTitulo(),
+                entidadPostDetails.getDescripcion()
+        );
+    }
 }

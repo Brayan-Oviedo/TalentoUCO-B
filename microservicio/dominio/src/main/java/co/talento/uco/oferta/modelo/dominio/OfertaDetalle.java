@@ -11,9 +11,18 @@ import java.util.List;
 @Getter
 @AllArgsConstructor
 public class OfertaDetalle {
+    private Long id;
     private PostDetails postDetails;
     private Contacto contacto;
     private boolean estaActiva;
     private List<String> tags;
     private List<Postulacion> postulaciones;
+
+    public OfertaDetalle(PostDetails postDetails, Contacto contacto, boolean estaActiva, List<String> tags, List<Postulacion> postulaciones) {
+        this.postDetails = postDetails;
+        this.contacto = contacto;
+        this.estaActiva = estaActiva;
+        this.tags = tags;
+        this.postulaciones = postulaciones;
+    }
 }

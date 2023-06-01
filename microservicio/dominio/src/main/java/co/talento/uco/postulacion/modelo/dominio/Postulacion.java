@@ -8,13 +8,14 @@ import lombok.Getter;
 import java.util.Date;
 
 @Getter
+@AllArgsConstructor
 public class Postulacion {
 
     private static final String INGRESE_EL_POSTULANTE = "Ingrese el postulante";
     private static final String INGRESE_LA_FECHA = "Ingrese la fecha";
     private static final String INGRESE_ALGUN_ADJUNTO = "Ingrese algun adjunto";
 
-
+    private Long id;
     private Usuario postulante;
     private Date fecha;
     private String adjunto;
@@ -29,4 +30,6 @@ public class Postulacion {
         this.fecha = fecha;
         this.adjunto = adjunto;
     }
+
+
 }

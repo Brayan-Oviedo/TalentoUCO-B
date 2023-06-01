@@ -41,11 +41,7 @@ public class RepositorioOfertaSql implements RepositorioOferta {
         return true;
     }
 
-    @Override
-    public RespuestaOferta consultarOferta(Long id) {
-        var entidadOferta= this.repositorioOfertaJpa.findById(id).get();
-        return this.mapperOferta.crearRespuesta(entidadOferta);
-    }
+
 
     @Override
     public boolean guardarPostulacion(Postulacion postulacion, Long idOferta) {
