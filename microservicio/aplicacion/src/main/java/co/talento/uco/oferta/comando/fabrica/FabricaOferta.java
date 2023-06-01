@@ -7,6 +7,7 @@ import co.talento.uco.oferta.modelo.dominio.OfertaDetalle;
 import co.talento.uco.oferta.modelo.dtoRespuesta.RespuestaOferta;
 import co.talento.uco.postdetails.comando.fabrica.FabricaPostDetails;
 import co.talento.uco.postulacion.modelo.dominio.Postulacion;
+import co.talento.uco.postulacion.modelo.dominio.PostulacionDetalle;
 import co.talento.uco.postulaciones.comando.fabrica.FabricaPostulacion;
 import co.talento.uco.usuario.comando.fabrica.FabricaUsuario;
 import lombok.RequiredArgsConstructor;
@@ -24,13 +25,13 @@ public class FabricaOferta {
     private final FabricaPostulacion fabricaPostulacion;
 
     public OfertaDetalle crear(SolicitudOfertaTransaccion solicitudOfertaTransaccion){
-        var postulacion = new ArrayList<Postulacion>();
+        var postulaciones = new ArrayList<PostulacionDetalle>();
         return new OfertaDetalle(
                 this.fabricaPostDetails.crear(solicitudOfertaTransaccion.getRequestPostDetails()),
                 this.fabricaContacto.crear(solicitudOfertaTransaccion.getRequestContactoTransaccion()),
                 solicitudOfertaTransaccion.isEstaActivo(),
                 solicitudOfertaTransaccion.getTags(),
-                postulacion
+                postulaciones
         );
     }
 
@@ -41,7 +42,7 @@ public class FabricaOferta {
                 fabricaContacto.crearDominio(respuestaOferta.getRespuestaContacto()),
                 respuestaOferta.isEstaActiva(),
                 respuestaOferta.getTags(),
-                fabricaPostulacion.crearListaDominio(respuestaOferta.getRespuestaPostulacions())
+                fabricaPostulacion.crearPostulacionDetalles(respuestaOferta.getRespuestaPostulacions())
         );
     }
 

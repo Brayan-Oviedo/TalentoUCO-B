@@ -1,7 +1,7 @@
 package co.talento.uco.postulacion.servicio;
 
 import co.talento.uco.oferta.modelo.dominio.OfertaDetalle;
-import co.talento.uco.postulacion.modelo.dominio.Postulacion;
+import co.talento.uco.postulacion.modelo.dominio.PostulacionDetalle;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -10,8 +10,8 @@ import java.util.ArrayList;
 public class ServicioProcesarPostulacion {
 
 
-    public OfertaDetalle ejecutar(OfertaDetalle ofertaDetalle, Postulacion postulacion) {
-        var lista = new ArrayList<Postulacion>();
+    public OfertaDetalle ejecutar(OfertaDetalle ofertaDetalle, PostulacionDetalle postulacion) {
+        var lista = new ArrayList<PostulacionDetalle>();
         lista.addAll(ofertaDetalle.getPostulaciones());
         lista.add(postulacion);
         return new OfertaDetalle(

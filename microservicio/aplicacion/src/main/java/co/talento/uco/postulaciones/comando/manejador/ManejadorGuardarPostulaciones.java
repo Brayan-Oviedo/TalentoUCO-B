@@ -2,8 +2,6 @@ package co.talento.uco.postulaciones.comando.manejador;
 
 import co.talento.uco.oferta.comando.consulta.ConsultaOferta;
 import co.talento.uco.oferta.comando.fabrica.FabricaOferta;
-import co.talento.uco.oferta.modelo.dominio.OfertaDetalle;
-import co.talento.uco.postulacion.modelo.dominio.Postulacion;
 import co.talento.uco.postulacion.servicio.ServicioGuardarPostulacion;
 import co.talento.uco.postulaciones.comando.SolicitudPostulacion;
 import co.talento.uco.postulaciones.comando.fabrica.FabricaPostulacion;
@@ -24,8 +22,8 @@ public class ManejadorGuardarPostulaciones {
         var respuestaOferta = this.consultaOferta.consultar(solicitudPostulacion.getIdOferta());
         var ofertaDetalle = this.fabricaOferta.crearOfertaDetalleDeSolicitud(respuestaOferta);
         var respuestaUsuario = this.manejadorObtenerUsuario.ejecutar(solicitudPostulacion.getSolicitudUsuarioConsulta());
-        var postulacionSinUsuario = this.fabricaPostulacion.crearDominioDeSolicitud(solicitudPostulacion);
-        return this.servicioGuardarPostulacion.guardarPostulacion(ofertaDetalle,respuestaUsuario, postulacionSinUsuario);
+        var postulacionDetalle = this.fabricaPostulacion.crearPostulacionDetalle(solicitudPostulacion);
+        return this.servicioGuardarPostulacion.guardarPostulacion(ofertaDetalle,respuestaUsuario, postulacionDetalle);
     }
 
 }
