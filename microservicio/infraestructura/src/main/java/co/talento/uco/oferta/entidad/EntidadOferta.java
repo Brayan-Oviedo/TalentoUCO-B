@@ -9,7 +9,6 @@ import javax.persistence.*;
 import java.util.List;
 
 @Entity
-@Table(name = "oferta")
 public class EntidadOferta {
     @Id
     @Column(name = "id_oferta")
@@ -53,6 +52,9 @@ public class EntidadOferta {
         this.pustulaciones = pustulaciones;
         this.isActive = isActive;
         this.tags = tags;
+    }
+
+    public EntidadOferta() {
     }
 
     public Long getIdOferta() {
