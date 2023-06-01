@@ -1,5 +1,6 @@
 package co.talento.uco.postulacion.entidad;
 
+import co.talento.uco.oferta.entidad.EntidadOferta;
 import co.talento.uco.usuario.adaptador.entidad.EntidadUsuario;
 
 import javax.persistence.*;
@@ -15,9 +16,9 @@ public class EntidadPostulacion {
     @JoinColumn(name = "nombreUsuario")
     private EntidadUsuario postulante;
 
-   /* @ManyToOne()
+    @ManyToOne()
     @JoinColumn(name = "id_oferta")
-    private EntidadOferta oferta;*/
+    private EntidadOferta oferta;
 
     @Column
     private Date fecha;

@@ -9,6 +9,7 @@ import javax.persistence.*;
 import java.util.List;
 
 @Entity
+@Table(name = "oferta")
 public class EntidadOferta {
     @Id
     @Column(name = "id_oferta")
@@ -26,7 +27,7 @@ public class EntidadOferta {
     @JoinColumn(name = "id_contacto")
     private EntidadContacto entidadContacto;
 
-    @OneToMany(mappedBy = "postulacion", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "oferta")
     private List<EntidadPostulacion> pustulaciones;
 
     private boolean isActive;

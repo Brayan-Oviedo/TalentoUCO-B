@@ -13,19 +13,11 @@ import org.springframework.stereotype.Repository;
 @Repository
 public class RepositorioPostulacionSql implements RepositorioPostulacion {
 
-    private final RepositorioOferta repositorioOferta;
     private final MapperPostulacion mapperPostulacion;
     private final RepositorioPostulacionJpa repositorioPostulacionJpa;
-    private final RepositorioOfertaJpa repositorioOfertaJpa;
-    private final MapperOferta mapperOferta;
 
-    public RepositorioPostulacionSql(RepositorioOferta repositorioOferta, MapperPostulacion mapperPostulacion, RepositorioPostulacionJpa repositorioPostulacionJpa, RepositorioOfertaJpa repositorioOfertaJpa, MapperOferta mapperOferta) {
-        this.repositorioOferta = repositorioOferta;
+    public RepositorioPostulacionSql(MapperPostulacion mapperPostulacion, RepositorioPostulacionJpa repositorioPostulacionJpa) {
         this.mapperPostulacion = mapperPostulacion;
         this.repositorioPostulacionJpa = repositorioPostulacionJpa;
-        this.repositorioOfertaJpa = repositorioOfertaJpa;
-        this.mapperOferta = mapperOferta;
     }
-
-
 }
