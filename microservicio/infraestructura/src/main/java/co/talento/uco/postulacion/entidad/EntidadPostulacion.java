@@ -10,15 +10,15 @@ import java.util.Date;
 public class EntidadPostulacion {
     @Id
     @Column(name = "id_postulacion")
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @OneToOne
     @JoinColumn(name = "nombreUsuario")
     private EntidadUsuario postulante;
 
-    @ManyToOne()
+    @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.REMOVE, CascadeType.ALL})
     @JoinColumn(name = "id_oferta")
-    private EntidadOferta oferta;
+    private EntidadOferta oferta ;
 
     @Column
     private Date fecha;
@@ -30,6 +30,17 @@ public class EntidadPostulacion {
         this.postulante = postulante;
         this.fecha = fecha;
         this.adjunto = adjunto;
+    }
+
+    public EntidadPostulacion(EntidadUsuario postulante, EntidadOferta oferta, Date fecha, String adjunto) {
+        this.postulante = postulante;
+        this.oferta = oferta;
+        this.fecha = fecha;
+        this.adjunto = adjunto;
+    }
+
+    public EntidadPostulacion() {
+
     }
 
     public Long getId() {

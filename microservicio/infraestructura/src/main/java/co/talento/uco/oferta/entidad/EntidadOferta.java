@@ -6,13 +6,14 @@ import co.talento.uco.postulacion.entidad.EntidadPostulacion;
 import co.talento.uco.usuario.adaptador.entidad.EntidadUsuario;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
 public class EntidadOferta {
     @Id
     @Column(name = "id_oferta")
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idOferta;
     @OneToOne
     @JoinColumn(name = "nombreUsuario")
@@ -26,14 +27,14 @@ public class EntidadOferta {
     @JoinColumn(name = "id_contacto")
     private EntidadContacto entidadContacto;
 
-    @OneToMany(mappedBy = "oferta")
+    @OneToMany(mappedBy = "oferta",cascade = {CascadeType.PERSIST, CascadeType.REMOVE, CascadeType.ALL})
     private List<EntidadPostulacion> pustulaciones;
 
     private boolean isActive;
 
     @Column
     @ElementCollection(targetClass=String.class)
-    private List<String> tags;
+    private List<String> tags = new ArrayList<>();
 
     public EntidadOferta(EntidadUsuario entidadUsuario, EntidadPostDetails entidadPostDetails, EntidadContacto entidadContacto, boolean isActive, List<String> tags, List<EntidadPostulacion> pustulaciones) {
         this.entidadUsuario = entidadUsuario;

@@ -14,6 +14,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
+import java.util.Date;
 
 @Component
 @RequiredArgsConstructor
@@ -26,6 +27,8 @@ public class FabricaOferta {
 
     public OfertaDetalle crear(SolicitudOfertaTransaccion solicitudOfertaTransaccion){
         var postulaciones = new ArrayList<PostulacionDetalle>();
+        var pustulacion = new PostulacionDetalle(new Date(),"asd");
+        postulaciones.add(pustulacion);
         return new OfertaDetalle(
                 this.fabricaPostDetails.crear(solicitudOfertaTransaccion.getRequestPostDetails()),
                 this.fabricaContacto.crear(solicitudOfertaTransaccion.getRequestContactoTransaccion()),
