@@ -34,8 +34,7 @@ public class ServicioProcesarOferta {
                 ofertaDetalle.getPostDetails(),
                 ofertaDetalle.getContacto(),
                 ofertaDetalle.isEstaActiva(),
-                ofertaDetalle.getTags(),
-                postulaciones
+                ofertaDetalle.getTags()
         );
     }
 }

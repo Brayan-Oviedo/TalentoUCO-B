@@ -2,7 +2,6 @@ package co.talento.uco.oferta.entidad;
 
 import co.talento.uco.postdetails.adaptador.contacto.entidad.EntidadContacto;
 import co.talento.uco.postdetails.entidad.EntidadPostDetails;
-import co.talento.uco.postulacion.entidad.EntidadPostulacion;
 import co.talento.uco.usuario.adaptador.entidad.EntidadUsuario;
 
 import javax.persistence.*;
@@ -27,8 +26,8 @@ public class EntidadOferta {
     @JoinColumn(name = "id_contacto")
     private EntidadContacto entidadContacto;
 
-    @OneToMany(mappedBy = "oferta",cascade = {CascadeType.PERSIST, CascadeType.REMOVE, CascadeType.ALL})
-    private List<EntidadPostulacion> pustulaciones;
+    /*@OneToMany(mappedBy = "oferta",cascade = {CascadeType.PERSIST, CascadeType.REMOVE, CascadeType.ALL})
+    private List<EntidadPostulacion> pustulaciones;*/
 
     private boolean isActive;
 
@@ -36,27 +35,26 @@ public class EntidadOferta {
     @ElementCollection(targetClass=String.class)
     private List<String> tags = new ArrayList<>();
 
-    public EntidadOferta(EntidadUsuario entidadUsuario, EntidadPostDetails entidadPostDetails, EntidadContacto entidadContacto, boolean isActive, List<String> tags, List<EntidadPostulacion> pustulaciones) {
+    public EntidadOferta(EntidadUsuario entidadUsuario, EntidadPostDetails entidadPostDetails, EntidadContacto entidadContacto, boolean isActive, List<String> tags) {
         this.entidadUsuario = entidadUsuario;
         this.entidadPostDetails = entidadPostDetails;
         this.entidadContacto = entidadContacto;
         this.isActive = isActive;
         this.tags = tags;
-        this.pustulaciones = pustulaciones;
     }
 
-    public EntidadOferta(Long idOferta, EntidadUsuario entidadUsuario, EntidadPostDetails entidadPostDetails, EntidadContacto entidadContacto, List<EntidadPostulacion> pustulaciones, boolean isActive, List<String> tags) {
+    public EntidadOferta(Long idOferta, EntidadUsuario entidadUsuario, EntidadPostDetails entidadPostDetails, EntidadContacto entidadContacto, boolean isActive, List<String> tags) {
         this.idOferta = idOferta;
         this.entidadUsuario = entidadUsuario;
         this.entidadPostDetails = entidadPostDetails;
         this.entidadContacto = entidadContacto;
-        this.pustulaciones = pustulaciones;
         this.isActive = isActive;
         this.tags = tags;
     }
 
     public EntidadOferta() {
     }
+
 
     public Long getIdOferta() {
         return idOferta;
@@ -80,9 +78,5 @@ public class EntidadOferta {
 
     public List<String> getTags() {
         return tags;
-    }
-
-    public List<EntidadPostulacion> getPustulaciones() {
-        return pustulaciones;
     }
 }

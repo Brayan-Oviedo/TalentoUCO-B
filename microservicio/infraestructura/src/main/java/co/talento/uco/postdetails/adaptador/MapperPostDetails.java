@@ -29,4 +29,11 @@ public class MapperPostDetails {
                 entidadPostDetails.getDescripcion()
         );
     }
+
+    public EntidadPostDetails crearEntidad(RespuestaPostDetails postDetails){
+        return new EntidadPostDetails(
+                postDetails.getTitulo(),
+                postDetails.getDescripcion()
+        );
+    }
 }

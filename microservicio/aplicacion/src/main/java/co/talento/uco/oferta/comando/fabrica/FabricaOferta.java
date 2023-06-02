@@ -33,8 +33,7 @@ public class FabricaOferta {
                 this.fabricaPostDetails.crear(solicitudOfertaTransaccion.getRequestPostDetails()),
                 this.fabricaContacto.crear(solicitudOfertaTransaccion.getRequestContactoTransaccion()),
                 solicitudOfertaTransaccion.isEstaActivo(),
-                solicitudOfertaTransaccion.getTags(),
-                postulaciones
+                solicitudOfertaTransaccion.getTags()
         );
     }
 
@@ -44,8 +43,7 @@ public class FabricaOferta {
                 fabricaPostDetails.crearDominio(respuestaOferta.getRespuestaPostDetails()),
                 fabricaContacto.crearDominio(respuestaOferta.getRespuestaContacto()),
                 respuestaOferta.isEstaActiva(),
-                respuestaOferta.getTags(),
-                fabricaPostulacion.crearPostulacionDetalles(respuestaOferta.getRespuestaPostulacions())
+                respuestaOferta.getTags()
         );
     }
 

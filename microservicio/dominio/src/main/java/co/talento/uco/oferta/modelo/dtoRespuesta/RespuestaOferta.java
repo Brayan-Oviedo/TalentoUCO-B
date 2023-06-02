@@ -20,5 +20,4 @@ public class RespuestaOferta {
     private RespuestaContacto respuestaContacto;
     private boolean estaActiva;
     private List<String> tags;
-    private List<RespuestaPostulacion> respuestaPostulacions;
 }

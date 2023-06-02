@@ -26,21 +26,28 @@ public class EntidadPostulacion {
     @Column
     private String adjunto;
 
-    public EntidadPostulacion(EntidadUsuario postulante, Date fecha, String adjunto) {
-        this.postulante = postulante;
-        this.fecha = fecha;
-        this.adjunto = adjunto;
-    }
 
-    public EntidadPostulacion(EntidadUsuario postulante, EntidadOferta oferta, Date fecha, String adjunto) {
+    public EntidadPostulacion(Long id, EntidadUsuario postulante, EntidadOferta oferta, Date fecha, String adjunto) {
+        this.id = id;
         this.postulante = postulante;
         this.oferta = oferta;
         this.fecha = fecha;
         this.adjunto = adjunto;
     }
 
+    public EntidadPostulacion(EntidadUsuario postulante, Date fecha, String adjunto) {
+        this.postulante = postulante;
+        this.fecha = fecha;
+        this.adjunto = adjunto;
+    }
+
+
     public EntidadPostulacion() {
 
+    }
+
+    public EntidadOferta getOferta() {
+        return oferta;
     }
 
     public Long getId() {

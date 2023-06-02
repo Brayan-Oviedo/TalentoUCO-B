@@ -1,5 +1,6 @@
 package co.talento.uco.postulacion.modelo.respuesta;
 
+import co.talento.uco.oferta.modelo.dtoRespuesta.RespuestaOferta;
 import co.talento.uco.usuario.modelo.dominio.Usuario;
 import co.talento.uco.usuario.modelo.dtoRespuesta.RespuestaUsuario;
 import lombok.AllArgsConstructor;
@@ -18,4 +19,5 @@ public class RespuestaPostulacion {
     private RespuestaUsuario respuestaUsuario;
     private Date fecha;
     private String adjunto;
+    private RespuestaOferta respuestaOferta;
 }

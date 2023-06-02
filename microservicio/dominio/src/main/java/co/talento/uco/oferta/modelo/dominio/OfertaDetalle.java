@@ -17,13 +17,11 @@ public class OfertaDetalle {
     private Contacto contacto;
     private boolean estaActiva;
     private List<String> tags;
-    private List<PostulacionDetalle> postulaciones;
 
-    public OfertaDetalle(PostDetails postDetails, Contacto contacto, boolean estaActiva, List<String> tags, List<PostulacionDetalle> postulaciones) {
+    public OfertaDetalle(PostDetails postDetails, Contacto contacto, boolean estaActiva, List<String> tags) {
         this.postDetails = postDetails;
         this.contacto = contacto;
         this.estaActiva = estaActiva;
         this.tags = tags;
-        this.postulaciones = postulaciones;
     }
 }

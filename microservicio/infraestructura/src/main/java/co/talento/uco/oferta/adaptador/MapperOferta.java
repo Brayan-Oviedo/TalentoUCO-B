@@ -7,8 +7,12 @@ import co.talento.uco.oferta.modelo.dominio.Oferta;
 import co.talento.uco.oferta.modelo.dtoRespuesta.RespuestaOferta;
 import co.talento.uco.postdetails.adaptador.MapperPostDetails;
 import co.talento.uco.postulacion.adaptador.MapperPostulacion;
+import co.talento.uco.postulacion.entidad.EntidadPostulacion;
+import co.talento.uco.postulacion.modelo.respuesta.RespuestaPostulacion;
 import co.talento.uco.usuario.adaptador.MapperUsuario;
 import org.springframework.stereotype.Component;
+
+import java.util.List;
 
 @Component
 
@@ -34,20 +38,18 @@ public class MapperOferta implements RepositorioMapperOferta {
                 this.mapperPostDetails.crearEntidad(oferta.getPostDetails()),
                 this.mapperContacto.crearEntidad(oferta.getContacto()),
                 oferta.isEstaActiva(),
-                oferta.getTags(),
-                this.mapperPostulacion.crearListaEntidad(oferta.getPostulaciones())
+                oferta.getTags()
         );
     }
 
-    public RespuestaOferta crearRespuestaDesdeEntidad(EntidadOferta entidadOferta){
+    public RespuestaOferta crearRespuestaDesdeEntidad(EntidadOferta entidadOferta, List<RespuestaPostulacion> postulaciones){
         return new RespuestaOferta(
                 entidadOferta.getIdOferta(),
                 this.mapperUsuario.crearRespuesta(entidadOferta.getEntidadUsuario()),
                 this.mapperPostDetails.crearRespuesta(entidadOferta.getEntidadPostDetails()),
                 this.mapperContacto.crearRespuesta(entidadOferta.getEntidadContacto()),
                 entidadOferta.isActive(),
-                entidadOferta.getTags(),
-                this.mapperPostulacion.crearListaRespuesta(entidadOferta.getPustulaciones())
+                entidadOferta.getTags()
         );
     }
 
@@ -58,8 +60,7 @@ public class MapperOferta implements RepositorioMapperOferta {
                 this.mapperPostDetails.crearDominio(entidadOferta.getEntidadPostDetails()),
                 this.mapperContacto.crearDominio(entidadOferta.getEntidadContacto()),
                 entidadOferta.isActive(),
-                entidadOferta.getTags(),
-                this.mapperPostulacion.crearListaDominioConId(entidadOferta.getPustulaciones())
+                entidadOferta.getTags()
         );
     }
 
