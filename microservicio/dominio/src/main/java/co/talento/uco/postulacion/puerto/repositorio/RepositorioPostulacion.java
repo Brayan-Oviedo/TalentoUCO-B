@@ -5,6 +5,6 @@ import co.talento.uco.postulacion.modelo.dominio.Postulacion;
 
 public interface RepositorioPostulacion {
 
-    boolean guardarPostulacion(Postulacion postulacion, Oferta oferta);
+    boolean guardarPostulacion(Postulacion postulacion);
 
 }

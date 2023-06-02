@@ -1,6 +1,7 @@
 package co.talento.uco.postulacion.modelo.dominio;
 
 import co.talento.uco.ValidadorParametro;
+import co.talento.uco.oferta.modelo.dominio.Oferta;
 import co.talento.uco.usuario.modelo.dominio.Usuario;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -19,8 +20,9 @@ public class Postulacion {
     private Usuario postulante;
     private Date fecha;
     private String adjunto;
+    private Oferta oferta;
 
-    public Postulacion(Usuario postulante, Date fecha, String adjunto) {
+    public Postulacion(Usuario postulante, Date fecha, String adjunto, Oferta oferta) {
 
         ValidadorParametro.validarValorNulo(postulante, INGRESE_EL_POSTULANTE);
         ValidadorParametro.validarValorNulo(fecha, INGRESE_LA_FECHA);
@@ -29,5 +31,6 @@ public class Postulacion {
         this.postulante = postulante;
         this.fecha = fecha;
         this.adjunto = adjunto;
+        this.oferta = oferta;
     }
 }

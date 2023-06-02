@@ -22,7 +22,7 @@ public class ControladorPostulacionTransaccion {
 
 
     @PostMapping
-    public Long guardarPostulacion(@RequestBody SolicitudPostulacion solicitudPostulacion) {
+    public boolean guardarPostulacion(@RequestBody SolicitudPostulacion solicitudPostulacion) {
         return this.manejadorGuardarPostulaciones.ejecutar(solicitudPostulacion);
     }
 

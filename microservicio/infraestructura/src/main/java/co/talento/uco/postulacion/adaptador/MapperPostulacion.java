@@ -1,5 +1,6 @@
 package co.talento.uco.postulacion.adaptador;
 
+import co.talento.uco.oferta.adaptador.MapperOferta;
 import co.talento.uco.oferta.entidad.EntidadOferta;
 import co.talento.uco.oferta.modelo.dominio.Oferta;
 import co.talento.uco.oferta.modelo.dtoRespuesta.RespuestaOferta;
@@ -19,20 +20,22 @@ public class MapperPostulacion {
     private final MapperUsuario mapperUsuario;
     private final MapperContacto mapperContacto;
     private final MapperPostDetails mapperPostDetails;
+    private final MapperOferta mapperOferta;
 
-    public MapperPostulacion(MapperUsuario mapperUsuario, MapperContacto mapperContacto, MapperPostDetails mapperPostDetails) {
+    public MapperPostulacion(MapperUsuario mapperUsuario, MapperContacto mapperContacto, MapperPostDetails mapperPostDetails, MapperOferta mapperOferta) {
         this.mapperUsuario = mapperUsuario;
         this.mapperContacto = mapperContacto;
         this.mapperPostDetails = mapperPostDetails;
+        this.mapperOferta = mapperOferta;
     }
 
     
-    public EntidadPostulacion crearEntidad(Postulacion postulacion, Oferta oferta) {
+    public EntidadPostulacion crearEntidad(Postulacion postulacion) {
 
         return new EntidadPostulacion(
                 postulacion.getId(),
                 this.mapperUsuario.crearEntidad(postulacion.getPostulante()),
-                this.crearEntidadOferta(oferta),
+                this.crearEntidadOferta(postulacion.getOferta()),
                 postulacion.getFecha(),
                 postulacion.getAdjunto()
         );
@@ -73,9 +76,11 @@ public class MapperPostulacion {
 
     public Postulacion crearDominio(EntidadPostulacion entidadPostulacion){
         return new Postulacion(
+                entidadPostulacion.getId(),
                 this.mapperUsuario.crearDomio(entidadPostulacion.getPostulante()),
                 entidadPostulacion.getFecha(),
-                entidadPostulacion.getAdjunto()
+                entidadPostulacion.getAdjunto(),
+                this.mapperOferta.crearDominio(entidadPostulacion.getOferta())
                 );
     }
 

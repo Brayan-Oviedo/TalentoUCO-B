@@ -22,18 +22,17 @@ public class MapperOferta implements RepositorioMapperOferta {
     private final MapperPostDetails mapperPostDetails;
     private final MapperUsuario mapperUsuario;
 
-    private final MapperPostulacion mapperPostulacion;
 
-    public MapperOferta(MapperContacto mapperContacto, MapperPostDetails mapperPostDetails, MapperUsuario mapperUsuario, MapperPostulacion mapperPostulacion) {
+    public MapperOferta(MapperContacto mapperContacto, MapperPostDetails mapperPostDetails, MapperUsuario mapperUsuario) {
         this.mapperContacto = mapperContacto;
         this.mapperPostDetails = mapperPostDetails;
         this.mapperUsuario = mapperUsuario;
-        this.mapperPostulacion = mapperPostulacion;
     }
 
 
     public EntidadOferta crearEntidadOferta(Oferta oferta){
         return new EntidadOferta(
+                oferta.getId(),
                 this.mapperUsuario.crearEntidad(oferta.getUsuario()),
                 this.mapperPostDetails.crearEntidad(oferta.getPostDetails()),
                 this.mapperContacto.crearEntidad(oferta.getContacto()),

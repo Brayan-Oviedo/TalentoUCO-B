@@ -16,7 +16,7 @@ public class EntidadPostulacion {
     @JoinColumn(name = "nombreUsuario")
     private EntidadUsuario postulante;
 
-    @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.REMOVE, CascadeType.ALL})
+    @ManyToOne()
     @JoinColumn(name = "id_oferta")
     private EntidadOferta oferta ;
 

@@ -7,8 +7,6 @@ import co.talento.uco.usuario.modelo.dominio.Usuario;
 import co.talento.uco.usuario.modelo.dtoRespuesta.RespuestaUsuario;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 @Service
@@ -17,17 +15,11 @@ public class ServicioProcesarOferta {
 
     public Oferta ejecutar(OfertaDetalle ofertaDetalle, RespuestaUsuario respuestaUsuario) {
         var usuario = new Usuario(respuestaUsuario.getNombreUsuario(), respuestaUsuario.getContrasena(), respuestaUsuario.getRoles());
-        /*var postulaciones = ofertaDetalle.getPostulaciones().stream().map(postulacion -> {
-            return new Postulacion(postulacion.getId(), usuario, postulacion.getFecha(), postulacion.getAdjunto());
-        }).toList();*/
-        var postulaciones = new ArrayList<Postulacion>();
-        var postulacion = new Postulacion(usuario,new Date(116, 5,3),"asd");
-        postulaciones.add(postulacion);
-        return buildOffer(ofertaDetalle, usuario, postulaciones);
+        return crearOferta(ofertaDetalle, usuario);
     }
 
 
-    private Oferta buildOffer(OfertaDetalle ofertaDetalle, Usuario usuario, List<Postulacion> postulaciones) {
+    private Oferta crearOferta(OfertaDetalle ofertaDetalle, Usuario usuario) {
         return new Oferta(
                 ofertaDetalle.getId(),
                 usuario,

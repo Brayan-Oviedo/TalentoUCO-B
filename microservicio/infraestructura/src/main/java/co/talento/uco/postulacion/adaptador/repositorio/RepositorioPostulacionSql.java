@@ -24,8 +24,8 @@ public class RepositorioPostulacionSql implements RepositorioPostulacion {
 
 
     @Override
-    public boolean guardarPostulacion(Postulacion postulacion, Oferta oferta) {
-        var entidadPostulacion = this.mapperPostulacion.crearEntidad(postulacion, oferta);
+    public boolean guardarPostulacion(Postulacion postulacion) {
+        var entidadPostulacion = this.mapperPostulacion.crearEntidad(postulacion);
         this.repositorioPostulacionJpa.save(entidadPostulacion);
         return true;
     }

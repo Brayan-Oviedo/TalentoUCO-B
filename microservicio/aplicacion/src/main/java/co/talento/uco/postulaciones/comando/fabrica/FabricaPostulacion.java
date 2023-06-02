@@ -1,5 +1,7 @@
 package co.talento.uco.postulaciones.comando.fabrica;
 
+import co.talento.uco.oferta.comando.fabrica.FabricaOferta;
+import co.talento.uco.oferta.modelo.dominio.OfertaDetalle;
 import co.talento.uco.postulacion.modelo.dominio.Postulacion;
 import co.talento.uco.postulacion.modelo.dominio.PostulacionDetalle;
 import co.talento.uco.postulacion.modelo.respuesta.RespuestaPostulacion;
@@ -14,24 +16,27 @@ import java.util.List;
 @RequiredArgsConstructor
 public class FabricaPostulacion {
     private final FabricaUsuario fabricaUsuario;
+    private final FabricaOferta fabricaOferta;
 
-    public Postulacion crearDominio(RespuestaPostulacion respuestaPostulacion){
+    /*public Postulacion crearDominio(RespuestaPostulacion respuestaPostulacion){
         return new Postulacion(
                 respuestaPostulacion.getId(),
                 fabricaUsuario.crear(respuestaPostulacion.getRespuestaUsuario()),
                 respuestaPostulacion.getFecha(),
-                respuestaPostulacion.getAdjunto()
+                respuestaPostulacion.getAdjunto(),
+                fabricaOferta.respuestaPostulacion.getRespuestaOferta()
         );
-    }
+    }*/
 
-    public List<Postulacion> crearListaDominio(List<RespuestaPostulacion> respuestaPostulacions){
+    /*public List<Postulacion> crearListaDominio(List<RespuestaPostulacion> respuestaPostulacions){
        return respuestaPostulacions.stream().map(this::crearDominio).toList();
-    }
+    }*/
 
-    public PostulacionDetalle crearPostulacionDetalle(SolicitudPostulacion solicitudPostulacion){
+    public PostulacionDetalle crearPostulacionDetalle(SolicitudPostulacion solicitudPostulacion, OfertaDetalle ofertaDetalle){
         return new PostulacionDetalle(
                 solicitudPostulacion.getFecha(),
-                solicitudPostulacion.getAdjunto()
+                solicitudPostulacion.getAdjunto(),
+                ofertaDetalle
         );
     }
 
