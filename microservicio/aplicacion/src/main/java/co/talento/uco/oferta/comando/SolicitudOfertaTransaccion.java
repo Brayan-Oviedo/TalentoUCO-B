@@ -3,7 +3,6 @@ package co.talento.uco.oferta.comando;
 import co.talento.uco.contacto.comando.RequestContactoTransaccion;
 import co.talento.uco.postdetails.comando.RequestPostDetails;
 import co.talento.uco.usuario.comando.SolicitudUsuarioConsulta;
-import co.talento.uco.usuario.comando.SolicitudUsuarioTransaccion;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -16,17 +15,17 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 public class SolicitudOfertaTransaccion {
-    private SolicitudUsuarioConsulta solicitudUsuarioConsulta;
-    private RequestPostDetails requestPostDetails;
-    private RequestContactoTransaccion requestContactoTransaccion;
-    private boolean estaActivo;
+    private SolicitudUsuarioConsulta usuario;
+    private RequestPostDetails postDetalles;
+    private RequestContactoTransaccion contacto;
+    private boolean estaActiva;
     private List<String> tags;
 
-    public SolicitudOfertaTransaccion(SolicitudUsuarioConsulta solicitudUsuarioConsulta, RequestPostDetails requestPostDetails, RequestContactoTransaccion requestContactoTransaccion, boolean estaActivo) {
-        this.solicitudUsuarioConsulta = solicitudUsuarioConsulta;
-        this.requestPostDetails = requestPostDetails;
-        this.requestContactoTransaccion = requestContactoTransaccion;
-        this.estaActivo = estaActivo;
+    public SolicitudOfertaTransaccion(SolicitudUsuarioConsulta usuario, RequestPostDetails postDetalles, RequestContactoTransaccion contacto, boolean estaActiva) {
+        this.usuario = usuario;
+        this.postDetalles = postDetalles;
+        this.contacto = contacto;
+        this.estaActiva = estaActiva;
         this.tags = new ArrayList<String>();
     }
 }

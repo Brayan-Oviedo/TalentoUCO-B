@@ -17,9 +17,9 @@ public class FabricaOferta {
 
     public OfertaDetalle crear(SolicitudOfertaTransaccion solicitudOfertaTransaccion){
         return new OfertaDetalle(
-                this.fabricaPostDetails.crear(solicitudOfertaTransaccion.getRequestPostDetails()),
-                this.fabricaContacto.crear(solicitudOfertaTransaccion.getRequestContactoTransaccion()),
-                solicitudOfertaTransaccion.isEstaActivo(),
+                this.fabricaPostDetails.crear(solicitudOfertaTransaccion.getPostDetalles()),
+                this.fabricaContacto.crear(solicitudOfertaTransaccion.getContacto()),
+                solicitudOfertaTransaccion.isEstaActiva(),
                 solicitudOfertaTransaccion.getTags()
         );
     }
@@ -27,7 +27,7 @@ public class FabricaOferta {
     public OfertaDetalle crearOfertaDetalleDeSolicitud(RespuestaOferta respuestaOferta){
         return new OfertaDetalle(
                 respuestaOferta.getId(),
-                fabricaPostDetails.crearDominio(respuestaOferta.getPostDetalle()),
+                fabricaPostDetails.crearDominio(respuestaOferta.getPostDetalles()),
                 fabricaContacto.crearDominio(respuestaOferta.getContacto()),
                 respuestaOferta.isEstaActiva(),
                 respuestaOferta.getTags()

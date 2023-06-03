@@ -10,6 +10,7 @@ import co.talento.uco.usuario.comando.fabrica.FabricaUsuario;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
+import java.util.Date;
 import java.util.List;
 
 @Component
@@ -34,7 +35,7 @@ public class FabricaPostulacion {
 
     public PostulacionDetalle crearPostulacionDetalle(SolicitudPostulacion solicitudPostulacion, OfertaDetalle ofertaDetalle){
         return new PostulacionDetalle(
-                solicitudPostulacion.getFecha(),
+                new Date(),
                 solicitudPostulacion.getAdjunto(),
                 ofertaDetalle
         );

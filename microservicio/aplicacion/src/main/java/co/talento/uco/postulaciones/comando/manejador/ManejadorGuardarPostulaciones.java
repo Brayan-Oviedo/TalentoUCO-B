@@ -21,7 +21,7 @@ public class ManejadorGuardarPostulaciones {
     public boolean ejecutar(SolicitudPostulacion solicitudPostulacion){
         var respuestaOferta = this.consultaOferta.consultar(solicitudPostulacion.getIdOferta());
         var ofertaDetalle = this.fabricaOferta.crearOfertaDetalleDeSolicitud(respuestaOferta);
-        var respuestaUsuario = this.manejadorObtenerUsuario.ejecutar(solicitudPostulacion.getSolicitudUsuarioConsulta());
+        var respuestaUsuario = this.manejadorObtenerUsuario.ejecutar(solicitudPostulacion.getUsuario());
         var postulacionDetalle = this.fabricaPostulacion.crearPostulacionDetalle(solicitudPostulacion,ofertaDetalle);
         return this.servicioGuardarPostulacion.ejecutar(postulacionDetalle, respuestaUsuario);
     }

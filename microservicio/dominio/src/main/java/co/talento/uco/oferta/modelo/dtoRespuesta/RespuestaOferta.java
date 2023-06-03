@@ -14,7 +14,7 @@ import java.util.List;
 public class RespuestaOferta {
     private Long id;
     private RespuestaUsuario usuario;
-    private RespuestaPostDetails postDetalle;
+    private RespuestaPostDetails postDetalles;
     private RespuestaContacto contacto;
     private boolean estaActiva;
     private List<String> tags;

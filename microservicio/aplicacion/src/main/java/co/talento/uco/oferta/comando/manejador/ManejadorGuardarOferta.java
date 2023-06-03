@@ -15,7 +15,7 @@ public class ManejadorGuardarOferta {
     private final ManejadorObtenerUsuario manejadorObtenerUsuario;
 
     public Long ejecutar(SolicitudOfertaTransaccion solicitudOfertaTransaccion) {
-        var usuario = this.manejadorObtenerUsuario.ejecutar(solicitudOfertaTransaccion.getSolicitudUsuarioConsulta());
+        var usuario = this.manejadorObtenerUsuario.ejecutar(solicitudOfertaTransaccion.getUsuario());
         var ofertaDetalle = this.fabricaOferta.crear(solicitudOfertaTransaccion);
         return this.servicioGuardarOferta.ejecutar(ofertaDetalle, usuario);
     }

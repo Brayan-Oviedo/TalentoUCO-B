@@ -31,21 +31,8 @@ public class ControladorOfertaTransaccion {
         return this.manejadorGuardarOferta.ejecutar(solicitudOfertaTransaccion);
     }
 
-
     @GetMapping
-    public String getJson() {
-        return this.manejadorObtenerUsuario.ejecutar(new SolicitudUsuarioConsulta("fan")).toString();
-        /*return new Gson().toJson(new SolicitudOfertaTransaccion(
-                new SolicitudUsuarioConsulta("fan"),
-                new RequestPostDetails("Primer post", "Prueba microservicio"),
-                new RequestContactoTransaccion("Contacto", "contacto@gmail.com", "3500000000", "Marinilla", "Cra"),
-                true,
-                new ArrayList<String>()
-        ));*/
-    }
-
-    @GetMapping(value = "/listar")
-    public List<RespuestaOferta> guardarOferta() {
+    public List<RespuestaOferta> obtenerOfertas() {
         return this.consultaOfertaLista.consultar();
     }
 }
