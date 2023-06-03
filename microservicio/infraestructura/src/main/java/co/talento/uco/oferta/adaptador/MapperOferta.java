@@ -52,6 +52,21 @@ public class MapperOferta implements RepositorioMapperOferta {
         );
     }
 
+    public RespuestaOferta crearRespuestaDesdeEntidad2(EntidadOferta entidadOferta){
+        return new RespuestaOferta(
+                entidadOferta.getIdOferta(),
+                this.mapperUsuario.crearRespuesta(entidadOferta.getEntidadUsuario()),
+                this.mapperPostDetails.crearRespuesta(entidadOferta.getEntidadPostDetails()),
+                this.mapperContacto.crearRespuesta(entidadOferta.getEntidadContacto()),
+                entidadOferta.isActive(),
+                entidadOferta.getTags()
+        );
+    }
+
+    public List<RespuestaOferta> crearListaRespuestaOfertaDesdeEntidad(List<EntidadOferta> entidadOfertas){
+        return entidadOfertas.stream().map(this::crearRespuestaDesdeEntidad2).toList();
+    }
+
     public Oferta crearDominio(EntidadOferta entidadOferta){
         return new Oferta(
                 entidadOferta.getIdOferta(),

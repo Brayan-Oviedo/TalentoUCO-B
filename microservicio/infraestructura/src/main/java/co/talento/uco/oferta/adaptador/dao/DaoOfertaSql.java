@@ -9,6 +9,8 @@ import co.talento.uco.postulacion.adaptador.MapperPostulacion;
 import co.talento.uco.postulacion.puerto.dao.DaoPostulacion;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 @Repository
 public class DaoOfertaSql implements DaoOferta {
 
@@ -33,5 +35,11 @@ public class DaoOfertaSql implements DaoOferta {
         var entidadOferta = this.repositorioOfertaJpa.findById(id).get();
         var respuestaPostulaciones = this.daoPostulacion.obtenerPorOferta(this.mapperOferta.crearDominio(entidadOferta));
         return this.mapperOferta.crearRespuestaDesdeEntidad(entidadOferta, respuestaPostulaciones);
+    }
+
+    @Override
+    public List<RespuestaOferta> consultarOfertalista() {
+        var listaEntidad = this.repositorioOfertaJpa.findAll();
+        return this.mapperOferta.crearListaRespuestaOfertaDesdeEntidad(listaEntidad);
     }
 }

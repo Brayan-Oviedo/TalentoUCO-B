@@ -27,8 +27,8 @@ public class FabricaOferta {
     public OfertaDetalle crearOfertaDetalleDeSolicitud(RespuestaOferta respuestaOferta){
         return new OfertaDetalle(
                 respuestaOferta.getId(),
-                fabricaPostDetails.crearDominio(respuestaOferta.getRespuestaPostDetails()),
-                fabricaContacto.crearDominio(respuestaOferta.getRespuestaContacto()),
+                fabricaPostDetails.crearDominio(respuestaOferta.getPostDetalle()),
+                fabricaContacto.crearDominio(respuestaOferta.getContacto()),
                 respuestaOferta.isEstaActiva(),
                 respuestaOferta.getTags()
         );
